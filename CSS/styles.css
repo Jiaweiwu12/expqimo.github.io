@@ -1,0 +1,689 @@
+/* 全局样式：重置默认样式，实现一致的基础布局 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 盒模型统一 */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* 字体设置 */
+    line-height: 1.6; /* 行高 */
+    color: #333; /* 默认文字颜色 */
+}
+
+.container {
+    max-width: 1200px; /* 最大宽度 */
+    margin: 0 auto; /* 居中 */
+    padding: 0 20px; /* 内边距 */
+}
+
+/* 实用类：通用样式类，实现快速应用 */
+.card-hover {
+    transition: all 0.3s; /* 悬停过渡 */
+}
+
+.card-hover:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* 阴影增强 */
+    transform: translateY(-2px); /* 向上移动 */
+}
+
+.btn-primary {
+    background: #ff6b6b; /* 主色背景 */
+    color: white; /* 文字颜色 */
+    padding: 0.5rem 1rem; /* 内边距 */
+    border-radius: 9999px; /* 圆角 */
+    transition: background 0.3s; /* 背景过渡 */
+    border: none; /* 无边框 */
+    cursor: pointer; /* 指针 */
+}
+
+.btn-primary:hover {
+    background: #ff5252; /* 悬停变暗 */
+}
+
+.input-primary {
+    border: 1px solid #d1d5db; /* 边框 */
+    border-radius: 0.375rem; /* 圆角 */
+    padding: 0.5rem 1rem; /* 内边距 */
+    transition: border-color 0.3s, box-shadow 0.3s; /* 过渡 */
+}
+
+.input-primary:focus {
+    outline: none; /* 无轮廓 */
+    border-color: #ff6b6b; /* 焦点边框 */
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1); /* 阴影 */
+}
+
+/* 实用类：通用样式类，实现快速应用 */
+.card-hover {
+    transition: all 0.3s; /* 悬停过渡 */
+}
+
+.card-hover:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* 阴影增强 */
+    transform: translateY(-2px); /* 向上移动 */
+}
+
+/* 文本颜色类：定义颜色变量 */
+.text-yellow-400 {
+    color: #fbbf24;
+}
+
+.text-gray-500, .text-gray-600 {
+    color: #6b7280;
+}
+
+.text-white {
+    color: white;
+}
+
+/* 背景颜色类：定义背景变量 */
+.bg-white {
+    background-color: white;
+}
+
+.bg-primary {
+    background-color: #ff6b6b;
+}
+
+.bg-gray-200 {
+    background-color: #e5e7eb;
+}
+
+.bg-green-500 {
+    background-color: #10b981;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-opacity-70 {
+    opacity: 0.7; /* 透明度 */
+}
+
+/* 边框圆角：定义圆角变量 */
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+/* 阴影：定义阴影变量 */
+.shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 定位：定义定位变量 */
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+/* Flexbox：定义弹性布局变量 */
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* 间距：定义边距变量 */
+.p-4 {
+    padding: 1rem;
+}
+
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mr-1 {
+    margin-right: 0.25rem;
+}
+
+.top-2 {
+    top: 0.5rem;
+}
+
+.right-2 {
+    right: 0.5rem;
+}
+
+.bottom-2 {
+    bottom: 0.5rem;
+}
+
+.left-2 {
+    left: 0.5rem;
+}
+
+/* 尺寸：定义尺寸变量 */
+.w-full {
+    width: 100%;
+}
+
+.h-48 {
+    height: 12rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+/* 对象适应：图片适应 */
+.object-cover {
+    object-fit: cover;
+}
+
+/* Hero区域：轮播图样式，实现背景切换和内容居中 */
+.hero {
+    height: 280px; /* 固定高度 */
+    position: relative; /* 相对定位 */
+    overflow: hidden; /* 隐藏溢出 */
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* 背景覆盖 */
+    background-position: center; /* 居中 */
+    opacity: 0; /* 默认透明 */
+    transition: opacity 0.5s; /* 淡入淡出过渡 */
+}
+
+.slide.active {
+    opacity: 1; /* 激活显示 */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中 */
+    z-index: 2; /* 层级 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* 白色文字 */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; /* 圆角 */
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* 大标题 */
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* 默认禁用指针事件 */
+}
+
+.slider-controls button {
+    background: rgba(255,255,255,0.8); /* 半透明白色 */
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 圆形 */
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background 0.3s;
+    pointer-events: auto; /* 启用指针事件 */
+}
+
+.slider-controls button:hover {
+    background: rgba(255,255,255,1); /* 悬停不透明 */
+}
+
+/* 菜单区域：网格布局，实现商品卡片展示 */
+.menu-section {
+    padding: 50px 0; /* 上下内边距 */
+    background: #f9f9f9; /* 浅灰背景 */
+}
+
+.menu-section h2 {
+    text-align: center; /* 居中 */
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.menu-tabs {
+    display: flex; /* 弹性布局 */
+    overflow-x: auto; /* 水平滚动 */
+    margin-bottom: 30px;
+    scrollbar-width: none; /* Firefox隐藏滚动条 */
+    -ms-overflow-style: none; /* IE隐藏 */
+}
+
+.menu-tabs::-webkit-scrollbar {
+    display: none; /* Chrome隐藏 */
+}
+
+.tab-button {
+    background: none; /* 无背景 */
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.tab-button.active {
+    background: #ff6b6b; /* 激活背景 */
+    color: white;
+}
+
+.menu-grid {
+    display: grid; /* 网格布局 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自适应列 */
+    gap: 20px; /* 间隙 */
+}
+
+.menu-card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.menu-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.menu-card-content {
+    padding: 1rem;
+}
+
+.menu-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.rating-number {
+    color: #666;
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+.menu-card p {
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.add-to-cart {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.add-to-cart:hover {
+    background: #ff5252;
+}
+
+/* 订单确认区域：表单样式，实现输入和按钮布局 */
+.checkout-section {
+    padding: 50px 0;
+    background: white;
+}
+
+.checkout-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.checkout-form {
+    max-width: 600px; /* 最大宽度 */
+    margin: 0 auto;
+}
+
+.checkout-form .form-group {
+    margin-bottom: 20px;
+}
+
+.checkout-form .form-group label {
+    display: block; /* 块级 */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.checkout-form .form-group select,
+.checkout-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.confirm-checkout-btn {
+    width: 100%;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.confirm-checkout-btn:hover {
+    background: #ff5252;
+}
+
+/* 遮罩层：全屏遮挡，实现背景模糊 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* 半透明黑 */
+    z-index: 999;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* 购物车抽屉：侧边面板，实现滑出效果 */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px; /* 默认隐藏 */
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s; /* 滑动过渡 */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-drawer.open {
+    right: 0; /* 显示 */
+}
+
+.cart-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto; /* 垂直滚动 */
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-info h4 {
+    margin-bottom: 5px;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-controls button {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.cart-item-controls span {
+    margin: 0 10px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.cart-total p {
+    margin-bottom: 5px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #ff5252;
+}
+
+/* 模态框：弹出窗口，实现确认对话 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#confirm-order {
+    background: #4CAF50; /* 绿色 */
+    color: white;
+}
+
+#cancel-order {
+    background: #f44336; /* 红色 */
+    color: white;
+}
+
+/* 购物车按钮：固定按钮，实现快速访问 */
+.cart-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+.cart-toggle:hover {
+    background: #ff5252;
+}
+
+/* 页脚：底部样式，实现信息展示 */
+.footer {
+    background: #333; /* 深灰 */
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact-info, .business-hours {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.contact-info h3, .business-hours h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.contact-info p, .business-hours p {
+    margin-bottom: 5px;
+}

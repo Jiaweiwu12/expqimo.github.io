@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小镇汉堡快餐店在线订餐</title>
+    <!-- 引入CSS样式文件，实现页面布局、颜色和动画效果 -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <!-- Hero区域：页面顶部轮播图区域，展示欢迎信息和背景图片切换，实现视觉吸引和品牌展示 -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- 轮播图容器，包含多张背景图片，实现自动或手动切换的动态效果 -->
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: url('imgs/bg0.png');"></div>
+                <div class="slide" style="background-image: url('imgs/bg1.png');"></div>
+                <div class="slide" style="background-image: url('imgs/bg2.png');"></div>
+            </div>
+            <!-- 轮播内容：显示标题和副标题，实现居中显示和文字覆盖效果 -->
+            <div class="hero-content">
+                <h1>欢迎来到小镇汉堡快餐店</h1>
+                <p>25216950222邬佳伟</p>
+            </div>
+            <!-- 轮播控制按钮：左右切换按钮，实现手动控制轮播图切换 -->
+            <div class="slider-controls">
+                <button class="prev-slide">&lt;</button>
+                <button class="next-slide">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 菜单区域：展示商品分类和网格布局，实现菜单浏览和分类筛选 -->
+    <section class="menu-section">
+        <div class="container">
+            <h2>菜单</h2>
+            <!-- 菜单标签：分类按钮，实现切换不同商品类别 -->
+            <div class="menu-tabs">
+                <button class="tab-button active" data-category="all">全部</button>
+                <button class="tab-button" data-category="burgers">汉堡</button>
+                <button class="tab-button" data-category="snacks">小食</button>
+                <button class="tab-button" data-category="drinks">饮料</button>
+            </div>
+            <!-- 菜单网格：动态生成商品卡片，实现网格布局和悬停效果 -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- 菜单卡片将通过JS动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 订单确认区域：隐藏的表单区域，实现订单信息输入和确认 -->
+    <section class="checkout-section" id="checkout-section" style="display: none;">
+        <div class="container">
+            <h2>订单确认</h2>
+            <!-- 结账表单：收集用户信息，实现表单验证和提交 -->
+            <div class="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">姓名：</label>
+                    <input type="text" id="customer-name" placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">电话：</label>
+                    <input type="tel" id="customer-phone" placeholder="请输入您的电话">
+                </div>
+                <div class="form-group">
+                    <label for="delivery-address">送餐地址：</label>
+                    <input type="text" id="delivery-address" placeholder="请输入送餐地址">
+                </div>
+                <div class="form-group">
+                    <label for="delivery-time">送餐时间：</label>
+                    <select id="delivery-time">
+                        <option value="asap">尽快送达</option>
+                        <option value="30min">30分钟后</option>
+                        <option value="1hour">1小时后</option>
+                        <option value="2hour">2小时后</option>
+                    </select>
+                </div>
+                <!-- 确认按钮：触发订单确认逻辑 -->
+                <button class="confirm-checkout-btn" id="confirm-checkout-btn">确认订单</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 遮罩层：全屏遮罩，实现模态框和抽屉的背景遮挡效果 -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 购物车抽屉：右侧滑出面板，实现购物车商品展示和管理 -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>购物车</h3>
+            <!-- 关闭按钮：关闭抽屉 -->
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <!-- 购物车商品列表：动态显示商品，实现数量调整 -->
+        <div class="cart-items" id="cart-items">
+            <!-- 购物车商品将通过JS动态生成 -->
+        </div>
+        <div class="cart-footer">
+            <!-- 购物车总计：显示价格信息 -->
+            <div class="cart-total">
+                <p>小计: <span id="subtotal">0.00</span> 元</p>
+                <p>配送费: <span id="delivery-fee">2.00</span> 元</p>
+                <p>总计: <span id="total">2.00</span> 元</p>
+            </div>
+            <!-- 结算按钮：跳转到订单确认 -->
+            <button class="checkout-btn" id="checkout-btn">去结算</button>
+        </div>
+    </div>
+
+    <!-- 订单确认倒计时模态框：弹出确认窗口，实现倒计时和订单最终确认 -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <h3>订单确认中...</h3>
+            <p>请在 <span id="countdown">10</span> 秒内确认订单</p>
+            <!-- 确认和取消按钮：处理订单状态 -->
+            <button id="confirm-order">确认</button>
+            <button id="cancel-order">取消</button>
+        </div>
+    </div>
+
+    <!-- 页脚：底部信息区域，实现联系方式和营业时间展示 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：info@dongruan.com</p>
+                </div>
+                <div class="business-hours">
+                    <h3>营业时间</h3>
+                    <p>周一至周六：9:00 - 22:00</p>
+                    <p>周日休息一天</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 购物车按钮：固定位置按钮，实现快速打开购物车抽屉 -->
+    <button class="cart-toggle" id="cart-toggle">购物车 (<span id="cart-count">0</span>)</button>
+
+    <!-- 引入JavaScript文件，实现页面交互逻辑 -->
+    <script src="JS/script.js"></script>
+</body>
+</html>
